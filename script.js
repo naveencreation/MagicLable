@@ -64,7 +64,7 @@ if (orderForm) {
             const subject = document.getElementById('subject').value;
             const schoolName = document.getElementById('schoolName').value;
             const whatsapp = document.getElementById('whatsapp').value;
-            const requests = document.getElementById('requests').value;
+            const address = document.getElementById('address').value;
             const photoInput = document.getElementById('photo');
 
             // Read photo file and convert to Base64
@@ -99,7 +99,7 @@ if (orderForm) {
                 subject: subject,
                 school: schoolName,
                 whatsapp: whatsapp,
-                requests: requests,
+                requests: address,
                 photoData: photoData,
                 photoName: photoName,
                 photoType: photoType
@@ -117,7 +117,7 @@ if (orderForm) {
             });
 
             // Generate WhatsApp message
-            const message = `Hi MagicLabel! 🌟\n\nI just placed an order on your website:\n\n*Child Name:* ${childName}\n*School:* ${schoolName}\n*Class & Section:* ${className} - ${division}\n*Roll No:* ${rollno || 'N/A'}\n*WhatsApp No:* ${whatsapp}\n*Requests:* ${requests || 'None'}\n\nPlease check my photo and verify the order!`;
+            const message = `Hi MagicLabel! 🌟\n\nI just placed an order on your website:\n\n*Child Name:* ${childName}\n*School:* ${schoolName}\n*Class & Section:* ${className} - ${division}\n*Roll No:* ${rollno || 'N/A'}\n*WhatsApp No:* ${whatsapp}\n*Delivery Address:* ${address}\n\nPlease check my photo and verify the order!`;
 
             const whatsappURL = `https://wa.me/${BUSINESS_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
