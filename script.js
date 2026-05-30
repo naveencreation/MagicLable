@@ -162,3 +162,106 @@ if (orderForm) {
         });
     }
 }
+
+// ============================================================
+// 3D Perspective Carousel — Auto-play, Touch, Dots, Keyboard
+// ============================================================
+(function initCarousel() {
+    const items    = Array.from(document.querySelectorAll('.carousel-item'));
+    const dots     = Array.from(document.querySelectorAll('.carousel-dot'));
+    const prevBtn  = document.getElementById('carousel-prev');
+    const nextBtn  = document.getElementById('carousel-next');
+    const viewport = document.getElementById('carousel-viewport');
+
+    if (!items.length) return;
+
+    const TOTAL    = items.length;
+    const INTERVAL = 3500; // ms between auto-advances
+    let current    = 0;
+    let timer      = null;
+
+    /** Positive modulo — always returns 0..n-1 */
+    function mod(n, m) { return ((n % m) + m) % m; }
+
+    /** Apply is-prev / is-active / is-next classes based on current index */
+    function update() {
+        items.forEach((el, i) => {
+            el.classList.remove('is-prev', 'is-active', 'is-next');
+            const dist = mod(i - current, TOTAL);
+            if      (dist === 0)         el.classList.add('is-active');
+            else if (dist === 1)         el.classList.add('is-next');
+            else if (dist === TOTAL - 1) el.classList.add('is-prev');
+            // Items with no class transition back to the off-screen hidden state
+        });
+
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('is-active', i === current);
+        });
+    }
+
+    function goTo(idx) {
+        current = mod(idx, TOTAL);
+        update();
+    }
+
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
+
+    function startAutoPlay() {
+        stopAutoPlay();
+        timer = setInterval(next, INTERVAL);
+    }
+
+    function stopAutoPlay() {
+        clearInterval(timer);
+        timer = null;
+    }
+
+    // --- Button events ---
+    prevBtn?.addEventListener('click', () => { prev(); startAutoPlay(); });
+    nextBtn?.addEventListener('click', () => { next(); startAutoPlay(); });
+
+    // --- Dot events ---
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => { goTo(i); startAutoPlay(); });
+    });
+
+    // --- Click a side card to bring it to centre ---
+    items.forEach((el, i) => {
+        el.addEventListener('click', () => {
+            if (i !== current) { goTo(i); startAutoPlay(); }
+        });
+    });
+
+    // --- Pause auto-play while the user hovers ---
+    viewport?.addEventListener('mouseenter', stopAutoPlay);
+    viewport?.addEventListener('mouseleave', startAutoPlay);
+
+    // --- Touch / swipe support ---
+    let touchX = 0;
+    viewport?.addEventListener('touchstart', e => {
+        touchX = e.changedTouches[0].clientX;
+    }, { passive: true });
+    viewport?.addEventListener('touchend', e => {
+        const delta = touchX - e.changedTouches[0].clientX;
+        if (Math.abs(delta) > 40) {
+            delta > 0 ? next() : prev();
+            startAutoPlay();
+        }
+    }, { passive: true });
+
+    // --- Keyboard arrow support (only when carousel is in view) ---
+    document.addEventListener('keydown', e => {
+        const vp = document.getElementById('carousel-viewport');
+        if (!vp) return;
+        const rect = vp.getBoundingClientRect();
+        const inView = rect.top < window.innerHeight && rect.bottom > 0;
+        if (!inView) return;
+        if (e.key === 'ArrowLeft')  { prev(); startAutoPlay(); }
+        if (e.key === 'ArrowRight') { next(); startAutoPlay(); }
+    });
+
+    // --- Initialise ---
+    update();
+    startAutoPlay();
+})();
