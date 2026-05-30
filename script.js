@@ -25,7 +25,7 @@ document.querySelectorAll('#mobile-menu a').forEach(link => {
 
 // Google Sheets Integration Configuration
 // Paste your Web App URL after deploying in Apps Script
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby2bkMTr8Gg3AfOBZdamYr5YiW7gjEADPzR3-ttvWvJiMLdYqV-bOMM2gTxr7LQ3cKP/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyn2_OrCRFCgIjJpoR5a3Apm4srwB5PYKwMBtKyP5sL5LWNxODwrbQtFiSQthB62wsp/exec';
 
 // Replace with your business phone number (including country code, without + or spaces, e.g., 919876543210)
 const BUSINESS_WHATSAPP_NUMBER = '919003892353';
