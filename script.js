@@ -25,10 +25,10 @@ document.querySelectorAll('#mobile-menu a').forEach(link => {
 
 // Google Sheets Integration Configuration
 // Paste your Web App URL after deploying in Apps Script
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxk93WeZft1tT7eA6HIgXBGy-1temY2n_0TaE5Gau47pEkVzJpuhJWAqupnmLE_UMKN/exec'; 
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby2bkMTr8Gg3AfOBZdamYr5YiW7gjEADPzR3-ttvWvJiMLdYqV-bOMM2gTxr7LQ3cKP/exec';
 
 // Replace with your business phone number (including country code, without + or spaces, e.g., 919876543210)
-const BUSINESS_WHATSAPP_NUMBER = '917010689737'; 
+const BUSINESS_WHATSAPP_NUMBER = '919003892353';
 
 // Form submission handler
 const orderForm = document.getElementById('label-order-form');
@@ -40,7 +40,7 @@ if (orderForm) {
 
     orderForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        
+
         if (!orderForm.checkValidity()) return;
 
         // Verify URL is configured
@@ -76,7 +76,7 @@ if (orderForm) {
                 const file = photoInput.files[0];
                 photoName = file.name;
                 photoType = file.type;
-                
+
                 // Read file as base64
                 photoData = await new Promise((resolve, reject) => {
                     const reader = new FileReader();
@@ -118,9 +118,9 @@ if (orderForm) {
 
             // Generate WhatsApp message
             const message = `Hi MagicLabel! 🌟\n\nI just placed an order on your website:\n\n*Child Name:* ${childName}\n*School:* ${schoolName}\n*Class & Section:* ${className} - ${division}\n*Roll No:* ${rollno || 'N/A'}\n*WhatsApp No:* ${whatsapp}\n*Requests:* ${requests || 'None'}\n\nPlease check my photo and verify the order!`;
-            
+
             const whatsappURL = `https://wa.me/${BUSINESS_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-            
+
             // Configure modal button
             waRedirectBtn.href = whatsappURL;
 
@@ -167,18 +167,18 @@ if (orderForm) {
 // 3D Perspective Carousel — Auto-play, Touch, Dots, Keyboard
 // ============================================================
 (function initCarousel() {
-    const items    = Array.from(document.querySelectorAll('.carousel-item'));
-    const dots     = Array.from(document.querySelectorAll('.carousel-dot'));
-    const prevBtn  = document.getElementById('carousel-prev');
-    const nextBtn  = document.getElementById('carousel-next');
+    const items = Array.from(document.querySelectorAll('.carousel-item'));
+    const dots = Array.from(document.querySelectorAll('.carousel-dot'));
+    const prevBtn = document.getElementById('carousel-prev');
+    const nextBtn = document.getElementById('carousel-next');
     const viewport = document.getElementById('carousel-viewport');
 
     if (!items.length) return;
 
-    const TOTAL    = items.length;
+    const TOTAL = items.length;
     const INTERVAL = 3500; // ms between auto-advances
-    let current    = 0;
-    let timer      = null;
+    let current = 0;
+    let timer = null;
 
     /** Positive modulo — always returns 0..n-1 */
     function mod(n, m) { return ((n % m) + m) % m; }
@@ -188,8 +188,8 @@ if (orderForm) {
         items.forEach((el, i) => {
             el.classList.remove('is-prev', 'is-active', 'is-next');
             const dist = mod(i - current, TOTAL);
-            if      (dist === 0)         el.classList.add('is-active');
-            else if (dist === 1)         el.classList.add('is-next');
+            if (dist === 0) el.classList.add('is-active');
+            else if (dist === 1) el.classList.add('is-next');
             else if (dist === TOTAL - 1) el.classList.add('is-prev');
             // Items with no class transition back to the off-screen hidden state
         });
@@ -257,7 +257,7 @@ if (orderForm) {
         const rect = vp.getBoundingClientRect();
         const inView = rect.top < window.innerHeight && rect.bottom > 0;
         if (!inView) return;
-        if (e.key === 'ArrowLeft')  { prev(); startAutoPlay(); }
+        if (e.key === 'ArrowLeft') { prev(); startAutoPlay(); }
         if (e.key === 'ArrowRight') { next(); startAutoPlay(); }
     });
 
