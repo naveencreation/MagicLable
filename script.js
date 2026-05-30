@@ -36,6 +36,7 @@ if (orderForm) {
     const submitBtn = orderForm.querySelector('button[type="submit"]');
     const successModal = document.getElementById('success-modal');
     const waRedirectBtn = document.getElementById('whatsapp-redirect-btn');
+    const closeModalBtn = document.getElementById('close-modal-btn');
 
     orderForm.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -116,7 +117,7 @@ if (orderForm) {
             });
 
             // Generate WhatsApp message
-            const message = `Hi StickerStars! 🌟\n\nI just placed an order on your website:\n\n*Child Name:* ${childName}\n*School:* ${schoolName}\n*Class & Section:* ${className} - ${division}\n*Roll No:* ${rollno || 'N/A'}\n*WhatsApp No:* ${whatsapp}\n*Requests:* ${requests || 'None'}\n\nPlease check my photo and verify the order!`;
+            const message = `Hi MagicLabel! 🌟\n\nI just placed an order on your website:\n\n*Child Name:* ${childName}\n*School:* ${schoolName}\n*Class & Section:* ${className} - ${division}\n*Roll No:* ${rollno || 'N/A'}\n*WhatsApp No:* ${whatsapp}\n*Requests:* ${requests || 'None'}\n\nPlease check my photo and verify the order!`;
             
             const whatsappURL = `https://wa.me/${BUSINESS_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
             
@@ -144,4 +145,20 @@ if (orderForm) {
             submitBtn.classList.remove('opacity-80', 'cursor-not-allowed');
         }
     });
+
+    // Close Modal event listeners
+    if (closeModalBtn && successModal) {
+        const closeModal = () => {
+            successModal.classList.add('hidden');
+        };
+
+        closeModalBtn.addEventListener('click', closeModal);
+
+        // Close modal when clicking the backdrop
+        successModal.addEventListener('click', (e) => {
+            if (e.target === successModal) {
+                closeModal();
+            }
+        });
+    }
 }
