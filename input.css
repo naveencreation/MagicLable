@@ -69,3 +69,26 @@ input[type="file"]::file-selector-button:hover {
 .whatsapp-float {
     animation: whatsapp-glow 2s infinite;
 }
+
+/* Premium Custom Scrollbar */
+/* For Webkit browsers (Chrome, Safari, Edge, Opera) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #fdf2f8; /* brand-50 */
+}
+::-webkit-scrollbar-thumb {
+    background: #f9a8d4; /* brand-300 */
+    border-radius: 9999px;
+    border: 2px solid #fdf2f8; /* Padding around thumb */
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #ec4899; /* brand-500 */
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #f9a8d4 #fdf2f8;
+}
