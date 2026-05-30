@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StickerStars | Premium Custom Kids Labels</title>
+    
+    <!-- Google Fonts: Nunito for a friendly, premium, rounded look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons for premium minimal vector icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-brand-100 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer group" onclick="window.scrollTo(0,0)">
+                    <div class="w-10 h-10 bg-brand-500 rounded-xl flex items-center justify-center shadow-lg shadow-brand-500/30 transform group-hover:rotate-12 transition-transform">
+                        <i class="ph-fill ph-star text-white text-2xl"></i>
+                    </div>
+                    <span class="font-black text-2xl text-slate-900 tracking-tight">Sticker<span class="text-brand-500">Stars</span></span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#how-it-works" class="text-slate-600 hover:text-brand-500 font-bold transition-colors">How it Works</a>
+                    <a href="#gallery" class="text-slate-600 hover:text-brand-500 font-bold transition-colors">Themes</a>
+                    <a href="#order-form" class="bg-brand-500 hover:bg-brand-600 text-white px-6 py-2.5 rounded-full font-black shadow-lg shadow-brand-500/30 transition-all hover:-translate-y-0.5">
+                        Order Now
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-brand-500 focus:outline-none p-2">
+                        <i class="ph ph-list text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-brand-100 absolute w-full shadow-xl">
+            <div class="px-4 pt-2 pb-6 space-y-2 text-center flex flex-col gap-4">
+                <a href="#how-it-works" class="block text-slate-600 font-bold hover:bg-brand-50 rounded-lg p-2">How it Works</a>
+                <a href="#gallery" class="block text-slate-600 font-bold hover:bg-brand-50 rounded-lg p-2">Themes</a>
+                <a href="#order-form" class="block bg-brand-500 text-white font-black rounded-full p-3 mx-4 shadow-md">Order Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Hero Content -->
+                <div class="text-center lg:text-left space-y-8">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-50 border border-brand-200 text-brand-600 font-bold text-sm shadow-sm">
+                        <i class="ph-fill ph-sparkle text-accent-500"></i> Premium Quality Labels
+                    </div>
+                    <h1 class="text-5xl lg:text-6xl font-black text-slate-900 leading-[1.15]">
+                        Make Their <span class="text-brand-500">School Gear</span> Stand Out!
+                    </h1>
+                    <p class="text-xl text-slate-600 max-w-2xl mx-auto lg:mx-0 font-semibold">
+                        Beautiful, personalized waterproof labels for your child. Just upload their details, and we'll craft a magical, high-quality design they'll love.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#order-form" class="bg-brand-500 hover:bg-brand-600 text-white text-lg px-8 py-4 rounded-full font-black shadow-xl shadow-brand-500/30 transition-all hover:-translate-y-1 flex items-center justify-center gap-2">
+                            Create Your Label <i class="ph-bold ph-arrow-right"></i>
+                        </a>
+                        <a href="#how-it-works" class="bg-white hover:bg-slate-50 text-slate-700 border-2 border-slate-200 text-lg px-8 py-4 rounded-full font-black transition-all flex items-center justify-center gap-2">
+                            See How it Works
+                        </a>
+                    </div>
+                    
+                    <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-5 text-sm font-bold text-slate-500">
+                        <div class="flex items-center gap-1.5"><i class="ph-fill ph-check-circle text-green-500 text-xl"></i> Waterproof</div>
+                        <div class="flex items-center gap-1.5"><i class="ph-fill ph-check-circle text-green-500 text-xl"></i> Custom Photo</div>
+                        <div class="flex items-center gap-1.5"><i class="ph-fill ph-check-circle text-green-500 text-xl"></i> Fast Delivery</div>
+                    </div>
+                </div>
+
+                <!-- Hero Mockup (Premium CSS Art) -->
+                <div class="relative mx-auto w-full max-w-md lg:max-w-full animate-float mt-10 lg:mt-0 perspective-1000">
+                    <!-- Decorative background blob -->
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 lg:w-96 lg:h-96 bg-accent-400/20 rounded-full blur-3xl -z-10"></div>
+                    
+                    <!-- The Label Mockup -->
+                    <div class="bg-white rounded-[2rem] border-[6px] border-brand-500 shadow-2xl shadow-brand-500/20 overflow-hidden relative">
+                        <!-- Border inner pattern -->
+                        <div class="absolute inset-0 border-[4px] border-accent-400 rounded-[1.6rem] pointer-events-none m-1.5 opacity-50 border-dashed"></div>
+                        
+                        <div class="flex p-6 gap-5 relative z-10">
+                            <!-- Premium Photo Area Placeholder -->
+                            <div class="w-2/5 shrink-0 relative">
+                                <div class="aspect-[3/4] rounded-2xl bg-gradient-to-br from-brand-100 to-brand-50 border-2 border-brand-200 overflow-hidden relative shadow-inner flex items-center justify-center group">
+                                    <i class="ph-duotone ph-image text-brand-300 text-5xl group-hover:scale-110 transition-transform"></i>
+                                    <!-- Decorative swoosh -->
+                                    <div class="absolute -bottom-6 -left-6 w-20 h-20 bg-white/50 rounded-full blur-sm"></div>
+                                </div>
+                                <!-- Premium Mascot Icon -->
+                                <div class="absolute -bottom-4 -right-4 w-14 h-14 bg-accent-400 rounded-full shadow-lg border-4 border-white flex items-center justify-center text-white transform rotate-12">
+                                    <i class="ph-fill ph-shooting-star text-2xl"></i>
+                                </div>
+                            </div>
+                            
+                            <!-- Details Area -->
+                            <div class="w-3/5 flex flex-col justify-center space-y-3">
+                                <div class="text-center mb-1">
+                                    <p class="text-[11px] font-black uppercase tracking-widest text-brand-400 mb-0.5">Hello, My Name is</p>
+                                    <h2 class="text-3xl font-black text-brand-600 leading-none">Sophia</h2>
+                                </div>
+                                
+                                <div class="space-y-2.5 text-[13px] font-bold text-slate-600">
+                                    <div class="flex items-center gap-2">
+                                        <span class="shrink-0 w-12 text-slate-400">Class</span>
+                                        <span class="flex-grow border-b-2 border-dotted border-brand-200 text-slate-800 text-center pb-0.5">2nd</span>
+                                    </div>
+                                    <div class="flex gap-3">
+                                        <div class="flex items-center gap-2 w-1/2">
+                                            <span class="shrink-0 text-slate-400">Div</span>
+                                            <span class="flex-grow border-b-2 border-dotted border-brand-200 text-slate-800 text-center pb-0.5">A</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 w-1/2">
+                                            <span class="shrink-0 text-slate-400">Roll</span>
+                                            <span class="flex-grow border-b-2 border-dotted border-brand-200 text-slate-800 text-center pb-0.5">20</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span class="shrink-0 w-12 text-slate-400">School</span>
+                                        <span class="flex-grow border-b-2 border-dotted border-brand-200 text-slate-800 text-center pb-0.5 whitespace-nowrap overflow-hidden">Sunrise Academy</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-slate-900 mb-4">How It Works</h2>
+                <p class="text-lg text-slate-500 max-w-2xl mx-auto font-semibold">Getting your premium labels is as easy as 1-2-3. We handle the design, you get the perfect stickers!</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 relative">
+                <!-- Connecting Line (Desktop only) -->
+                <div class="hidden md:block absolute top-1/2 left-[10%] right-[10%] h-1 bg-brand-100 -translate-y-1/2 z-0 border-t-2 border-dashed border-brand-300"></div>
+
+                <!-- Step 1 -->
+                <div class="relative z-10 bg-white p-8 rounded-3xl shadow-xl shadow-slate-200/50 border-2 border-slate-100 text-center hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-20 h-20 mx-auto bg-brand-50 text-brand-500 rounded-2xl flex items-center justify-center text-4xl mb-6 shadow-sm transform -rotate-3 border border-brand-100">
+                        <i class="ph-duotone ph-file-text"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 mb-3">1. Fill Details</h3>
+                    <p class="text-slate-600 font-semibold">Enter your child's info and upload their photo using our secure form below.</p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="relative z-10 bg-white p-8 rounded-3xl shadow-xl shadow-slate-200/50 border-2 border-slate-100 text-center hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-20 h-20 mx-auto bg-green-50 text-green-500 rounded-2xl flex items-center justify-center text-4xl mb-6 shadow-sm transform rotate-3 border border-green-100">
+                        <i class="ph-duotone ph-whatsapp-logo"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 mb-3">2. We Design & Confirm</h3>
+                    <p class="text-slate-600 font-semibold">We craft a beautiful layout and send a proof to your WhatsApp for approval.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative z-10 bg-white p-8 rounded-3xl shadow-xl shadow-slate-200/50 border-2 border-slate-100 text-center hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-20 h-20 mx-auto bg-accent-50 text-accent-500 rounded-2xl flex items-center justify-center text-4xl mb-6 shadow-sm transform -rotate-3 border border-accent-100">
+                        <i class="ph-duotone ph-package"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 mb-3">3. Pay & Receive</h3>
+                    <p class="text-slate-600 font-semibold">Complete payment securely and receive your high-quality waterproof labels!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section (Vector Themes) -->
+    <section id="gallery" class="py-24 bg-slate-50 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-slate-900 mb-4">Magical Themes They'll Love</h2>
+                <p class="text-lg text-slate-500 max-w-2xl mx-auto font-bold">Beautifully crafted vector designs. Premium colors and playful aesthetics.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Theme 1: Magic -->
+                <div class="group cursor-pointer">
+                    <div class="aspect-[4/3] rounded-[2rem] bg-gradient-to-br from-fuchsia-100 to-pink-100 border-4 border-white shadow-xl shadow-pink-100 p-6 flex flex-col items-center justify-center relative overflow-hidden transition-transform duration-300 group-hover:-translate-y-2">
+                        <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-4 transform -rotate-6">
+                            <i class="ph-duotone ph-magic-wand text-fuchsia-500 text-4xl"></i>
+                        </div>
+                        <div class="w-3/4 h-2.5 bg-white/60 rounded-full mb-2.5"></div>
+                        <div class="w-1/2 h-2.5 bg-white/60 rounded-full"></div>
+                    </div>
+                    <div class="text-center mt-5">
+                        <h3 class="font-black text-slate-800 text-xl">Magic Sparkle</h3>
+                        <p class="text-sm font-bold text-fuchsia-500 mt-1">Pink & Purple</p>
+                    </div>
+                </div>
+
+                <!-- Theme 2: Space -->
+                <div class="group cursor-pointer">
+                    <div class="aspect-[4/3] rounded-[2rem] bg-gradient-to-br from-indigo-100 to-blue-100 border-4 border-white shadow-xl shadow-blue-100 p-6 flex flex-col items-center justify-center relative overflow-hidden transition-transform duration-300 group-hover:-translate-y-2">
+                        <div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-4 transform rotate-6">
+                            <i class="ph-duotone ph-rocket text-indigo-500 text-4xl"></i>
+                        </div>
+                        <div class="w-3/4 h-2.5 bg-white/60 rounded-full mb-2.5"></div>
+                        <div class="w-1/2 h-2.5 bg-white/60 rounded-full"></div>
+                    </div>
+                    <div class="text-center mt-5">
+                        <h3 class="font-black text-slate-800 text-xl">Cosmic Explorer</h3>
+                        <p class="text-sm font-bold text-indigo-500 mt-1">Deep Blue</p>
+                    </div>
+                </div>
+
+                <!-- Theme 3: Nature -->
+                <div class="group cursor-pointer">
+                    <div class="aspect-[4/3] rounded-[2rem] bg-gradient-to-br from-emerald-100 to-teal-100 border-4 border-white shadow-xl shadow-teal-100 p-6 flex flex-col items-center justify-center relative overflow-hidden transition-transform duration-300 group-hover:-translate-y-2">
+                        <div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-4 transform -rotate-3">
+                            <i class="ph-duotone ph-leaf text-emerald-500 text-4xl"></i>
+                        </div>
+                        <div class="w-3/4 h-2.5 bg-white/60 rounded-full mb-2.5"></div>
+                        <div class="w-1/2 h-2.5 bg-white/60 rounded-full"></div>
+                    </div>
+                    <div class="text-center mt-5">
+                        <h3 class="font-black text-slate-800 text-xl">Wild Nature</h3>
+                        <p class="text-sm font-bold text-emerald-500 mt-1">Mint Green</p>
+                    </div>
+                </div>
+
+                <!-- Theme 4: Royal -->
+                <div class="group cursor-pointer">
+                    <div class="aspect-[4/3] rounded-[2rem] bg-gradient-to-br from-amber-100 to-orange-100 border-4 border-white shadow-xl shadow-orange-100 p-6 flex flex-col items-center justify-center relative overflow-hidden transition-transform duration-300 group-hover:-translate-y-2">
+                        <div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-4 transform rotate-3">
+                            <i class="ph-duotone ph-crown text-amber-500 text-4xl"></i>
+                        </div>
+                        <div class="w-3/4 h-2.5 bg-white/60 rounded-full mb-2.5"></div>
+                        <div class="w-1/2 h-2.5 bg-white/60 rounded-full"></div>
+                    </div>
+                    <div class="text-center mt-5">
+                        <h3 class="font-black text-slate-800 text-xl">Little Royal</h3>
+                        <p class="text-sm font-bold text-amber-500 mt-1">Warm Gold</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form Section -->
+    <section id="order-form" class="py-24 bg-brand-500 relative overflow-hidden">
+        <!-- Decorative bg elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+            <div class="absolute top-10 left-10 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-80 h-80 bg-accent-400/20 rounded-full blur-3xl"></div>
+            <i class="ph-fill ph-star absolute top-20 right-20 text-white/20 text-6xl transform rotate-12"></i>
+            <i class="ph-fill ph-heart absolute bottom-20 left-20 text-white/20 text-5xl transform -rotate-12"></i>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="glass-card rounded-[2.5rem] p-8 md:p-12">
+                
+                <div class="text-center mb-10">
+                    <h2 class="text-4xl font-black text-slate-900 mb-3 flex justify-center items-center gap-3">
+                        Create Your Label! <i class="ph-fill ph-sparkle text-accent-500"></i>
+                    </h2>
+                    <p class="text-slate-600 text-lg font-bold">Fill in the details below. We'll design it and reach out on WhatsApp.</p>
+                </div>
+
+                <form id="label-order-form" class="space-y-6">
+                    
+                    <!-- Row 1: Name -->
+                    <div>
+                        <label class="block text-sm font-black text-slate-700 mb-2" for="childName">Child's Full Name *</label>
+                        <input type="text" id="childName" name="Child Name" required
+                            class="w-full px-5 py-4 rounded-2xl border-2 border-slate-200 input-premium outline-none text-slate-800 font-bold text-lg bg-white/80"
+                            placeholder="e.g. Sophia Johnson">
+                    </div>
+
+                    <!-- Row 2: Class & Div -->
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-black text-slate-700 mb-2" for="class">Class/Grade *</label>
+                            <input type="text" id="class" name="Class" required
+                                class="w-full px-5 py-4 rounded-2xl border-2 border-slate-200 input-premium outline-none text-slate-800 font-bold text-lg bg-white/80"
+                                placeholder="e.g. 2nd">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-black text-slate-700 mb-2" for="div">Division / Section *</label>
+                            <input type="text" id="div" name="Division" required
+                                class="w-full px-5 py-4 rounded-2xl border-2 border-slate-200 input-premium outline-none text-slate-800 font-bold text-lg bg-white/80"
+                                placeholder="e.g. A">
+                        </div>
+                    </div>
+
+                    <!-- Row 3: Roll No & Subject -->
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-black text-slate-700 mb-2" for="rollno">Roll No.</label>
+                            <input type="number" id="rollno" name="Roll No"
+                                class="w-full px-5 py-4 rounded-2xl border-2 border-slate-200 input-premium outline-none text-slate-800 font-bold text-lg bg-white/80"
+                                placeholder="e.g. 20">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-black text-slate-700 mb-2" for="subject">Subject (Optional)</label>
+                            <input type="text" id="subject" name="Subject"
+                                class="w-full px-5 py-4 rounded-2xl border-2 border-slate-200 input-premium outline-none text-slate-800 font-bold text-lg bg-white/80"
+                                placeholder="Leave blank for main label">
+                        </div>
+                    </div>
+
+                    <!-- Row 4: School Name -->
+                    <div>
+                        <label class="block text-sm font-black text-slate-700 mb-2" for="schoolName">School Name *</label>
+                        <input type="text" id="schoolName" name="School Name" required
+                            class="w-full px-5 py-4 rounded-2xl border-2 border-slate-200 input-premium outline-none text-slate-800 font-bold text-lg bg-white/80"
+                            placeholder="e.g. Sunrise Academy">
+                    </div>
+
+                    <div class="w-full h-px bg-slate-200/60 my-8"></div> <!-- Divider -->
+
+                    <!-- Row 5: Contact & Photo -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- WhatsApp -->
+                        <div>
+                            <label class="block text-sm font-black text-slate-700 mb-2" for="whatsapp">
+                                <i class="ph-fill ph-whatsapp-logo text-green-500 text-xl mr-1 inline-block align-text-bottom"></i> Your WhatsApp Number *
+                            </label>
+                            <input type="tel" id="whatsapp" name="WhatsApp Number" required
+                                class="w-full px-5 py-4 rounded-2xl border-2 border-slate-200 input-premium outline-none text-slate-800 font-bold text-lg bg-white/80"
+                                placeholder="+91 98765 43210">
+                            <p class="text-[13px] text-slate-600 mt-2 font-semibold">We will contact you here to confirm the design.</p>
+                        </div>
+
+                        <!-- Photo Upload -->
+                        <div>
+                            <label class="block text-sm font-black text-slate-700 mb-2" for="photo">
+                                Child's Photo *
+                            </label>
+                            <div class="relative w-full px-4 py-3.5 rounded-2xl border-2 border-brand-200 border-dashed hover:border-brand-500 transition-colors bg-brand-50/50">
+                                <input type="file" id="photo" name="Child Photo" accept="image/*" required
+                                    class="w-full text-slate-700 font-bold text-sm focus:outline-none cursor-pointer">
+                            </div>
+                            <p class="text-[13px] text-slate-600 mt-2 font-semibold">Please upload a clear, front-facing photo.</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 6: Special Requests -->
+                    <div>
+                        <label class="block text-sm font-black text-slate-700 mb-2" for="requests">Theme / Special Requests</label>
+                        <textarea id="requests" name="Special Requests" rows="3"
+                            class="w-full px-5 py-4 rounded-2xl border-2 border-slate-200 input-premium outline-none text-slate-800 font-bold resize-none bg-white/80"
+                            placeholder="e.g. She loves Unicorns and the color pink!"></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="pt-6">
+                        <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white text-xl py-5 rounded-2xl font-black shadow-xl shadow-slate-900/20 transition-all hover:-translate-y-1 flex items-center justify-center gap-3">
+                            Submit Order Details <i class="ph-bold ph-paper-plane-tilt"></i>
+                        </button>
+                        <p class="text-center text-sm font-bold text-slate-500 mt-4 flex items-center justify-center gap-1">
+                            <i class="ph-fill ph-lock-key"></i> Your information is secure.
+                        </p>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center gap-2 mb-6 md:mb-0">
+                    <div class="w-8 h-8 bg-brand-500 rounded-lg flex items-center justify-center">
+                        <i class="ph-fill ph-star text-white text-xl"></i>
+                    </div>
+                    <span class="font-black text-xl text-white tracking-tight">Sticker<span class="text-brand-500">Stars</span></span>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="mb-2 font-bold text-slate-300">Creating smiles, one label at a time.</p>
+                    <p class="text-sm font-semibold">© <script>document.write(new Date().getFullYear())</script> StickerStars. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script src="script.js" defer></script>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/917010689737" target="_blank" class="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50 bg-[#25D366] hover:bg-[#128C7E] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg transition-colors whatsapp-float group" title="Chat with us on WhatsApp">
+        <i class="ph-fill ph-whatsapp-logo text-4xl group-hover:scale-110 transition-transform"></i>
+    </a>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden transition-all duration-300">
+        <div class="bg-white rounded-[2.5rem] p-8 md:p-10 max-w-md w-full border-4 border-brand-500 shadow-2xl text-center transform scale-95 transition-transform duration-300 relative">
+            <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-24 h-24 bg-brand-500 rounded-full flex items-center justify-center border-8 border-slate-50 shadow-xl">
+                <i class="ph-fill ph-sparkle text-white text-4xl animate-pulse"></i>
+            </div>
+            
+            <div class="mt-8 space-y-4">
+                <h3 class="text-3xl font-black text-slate-900 leading-tight">Order Details Sent! 🎉</h3>
+                <p class="text-slate-600 font-semibold leading-relaxed">
+                    Your details and photo have been securely saved to our database.
+                </p>
+                <div class="p-4 bg-brand-50 rounded-2xl border border-brand-100 text-brand-600 font-bold text-sm">
+                    Click below to start a WhatsApp chat with us. We'll show you a preview of your custom label design!
+                </div>
+                
+                <a id="whatsapp-redirect-btn" href="#" target="_blank" class="w-full bg-[#25D366] hover:bg-[#128C7E] text-white text-lg py-4 rounded-2xl font-black shadow-lg shadow-green-500/20 transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                    <i class="ph-bold ph-whatsapp-logo text-2xl"></i> Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
